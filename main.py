@@ -10,17 +10,21 @@ def encode(password):
     return encode_psw
 
 
+# Hemanshu version of decode function
+def decode(pwd):
+    pwd = list(pwd)
+    decoded_pwd_list = []
+    for num in pwd:
+        # first convert to int to add and the convert to str to append and then join together
+        # everything the same except now num -= 3
+        num = int(num)
+        num -= 3
+        num = str(num)
+        decoded_pwd_list.append(num)
+    
+    decoded_pwd = "".join(decoded_pwd_list)
 
-def decode(password):
-    password = list(password)
-    psw = []
-    for i in password:
-        i = int(i)
-        i = i - 3
-        i = str(i)
-        psw.append(i)
-        decode_psw = "".join(psw)
-    return decode_psw
+    return decoded_pwd
 
 
 def main():
